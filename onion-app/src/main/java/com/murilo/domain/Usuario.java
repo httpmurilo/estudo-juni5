@@ -7,7 +7,15 @@ public class Usuario {
     public Usuario(Long id, String nome, String email, String senha) {
 
         if(nome == null) {
-            throw new ValidationException("o nome é obrigatorio");
+            throw new ValidationException("nome é obrigatorio");
+        }
+
+        if(email == null) {
+            throw new ValidationException("email é obrigatorio");
+        }
+
+        if(senha == null) {
+            throw new ValidationException("senha é obrigatorio");
         }
 
         this.id = id;
@@ -35,5 +43,15 @@ public class Usuario {
 
     public String getSenha() {
         return senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }
